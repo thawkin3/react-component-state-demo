@@ -1,13 +1,11 @@
 import React from 'react';
 
-// BAD: Don't modify state directly (spread)
-
 export class BadModifyDirectlyExample2 extends React.Component {
   state = {
     colors: ['red', 'blue', 'green']
-  }
+  };
 
-  addYellow = () => this.state.colors = [...this.state.colors, 'yellow']
+  addYellow = () => this.state.colors = [...this.state.colors, 'yellow'];
 
   render() {
     return (
@@ -21,6 +19,6 @@ export class BadModifyDirectlyExample2 extends React.Component {
         </div>
         <button onClick={this.addYellow}>Add "yellow" to list</button>
       </>
-    )
+    );
   }
 }

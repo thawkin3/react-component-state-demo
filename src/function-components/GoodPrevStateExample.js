@@ -1,31 +1,22 @@
-// import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 
-// GOOD: Handle previous state using a ref
-// https://blog.logrocket.com/how-to-get-previous-props-state-with-react-hooks/
+export const GoodPrevStateExample = () => {
+  const [isDisabled, setIsDisabled] = useState(false);
 
-// export const GoodPrevStateExample = () => {
-//   const [isDisabled, setIsDisabled] = useState(false);
+  const toggleButton = () => setIsDisabled(isDisabled => !isDisabled);
 
-//   const previousIsDisabledRef = useRef(false);
+  const toggleButton2Times = () => {
+    for (let i = 0; i < 2; i++) {
+      toggleButton();
+    }
+  }
 
-//   useEffect(() => {
-//     previousIsDisabledRef.current = isDisabled;
-//   }, [isDisabled]);
-
-//   const toggleButton = () => setIsDisabled(!previousIsDisabledRef.current)
-
-//   const toggleButton2Times = () => {
-//     for (let i = 0; i < 2; i++) {
-//       toggleButton()
-//     }
-//   }
-
-//   return (
-//     <>
-//       <h3><span className="good">GOOD</span>: Handle previous state using a ref</h3>
-//       <button disabled={isDisabled}>I'm {isDisabled ? 'disabled' : 'enabled'}</button>
-//       <button onClick={toggleButton}>Toggle button state</button>
-//       <button onClick={toggleButton2Times}>Toggle button state 2 times</button>
-//     </>
-//   )
-// }
+  return (
+    <>
+      <h3><span className="good">GOOD</span>: When setting state that relies on the previous state, do so as a function of previous state</h3>
+      <button disabled={isDisabled}>I'm {isDisabled ? 'disabled' : 'enabled'}</button>
+      <button onClick={toggleButton}>Toggle button state</button>
+      <button onClick={toggleButton2Times}>Toggle button state 2 times</button>
+    </>
+  );
+}

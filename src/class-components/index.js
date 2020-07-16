@@ -27,6 +27,6 @@ export class ClassComponentExamples extends React.Component {
         <hr />
         <GoodAsyncExample />
       </>
-    )
+    );
   }
 }

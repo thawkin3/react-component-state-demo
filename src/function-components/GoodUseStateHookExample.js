@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 
-// GOOD: Use the setter function returned from useState
+export const GoodUseStateHookExample = () => {
+  const initialState = ['red', 'blue', 'green'];
+  let [colors, setColors] = useState(initialState);
 
-export const UseStateHookExample = () => {
-  const initialState = ['red', 'blue', 'green']
-  let [colors, setColors] = useState(initialState)
-
-  const addYellow = () => setColors([...colors, 'yellow'])
+  const addYellow = () => setColors([...colors, 'yellow']);
 
   return (
     <>
@@ -19,5 +17,5 @@ export const UseStateHookExample = () => {
       </div>
       <button onClick={addYellow}>Add "yellow" to list</button>
     </>
-  )
+  );
 }

@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 
-// BAD: Don't modify state directly (push)
+export const BadModifyDirectlyExample = () => {
+  const initialState = ['red', 'blue', 'green'];
+  let [colors] = useState(initialState);
 
-export const ModifyDirectlyExample = () => {
-  const initialState = ['red', 'blue', 'green']
-  let [colors] = useState(initialState)
-
-  const addYellow = () => colors.push('yellow')
+  const addYellow = () => colors.push('yellow');
 
   return (
     <>
@@ -19,5 +17,5 @@ export const ModifyDirectlyExample = () => {
       </div>
       <button onClick={addYellow}>Add "yellow" to list</button>
     </>
-  )
+  );
 }

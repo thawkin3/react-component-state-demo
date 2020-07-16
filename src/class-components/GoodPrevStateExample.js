@@ -1,19 +1,17 @@
 import React from 'react';
 
-// GOOD: When setting state that relies on the previous state, do so as a function of previous state
-
 export class GoodPrevStateExample extends React.Component {
   state = {
     isDisabled: false
-  }
+  };
 
-  toggleButton = () => this.setState(prevState => ({ isDisabled: !prevState.isDisabled }))
+  toggleButton = () => this.setState(prevState => ({ isDisabled: !prevState.isDisabled }));
 
   toggleButton2Times = () => {
     for (let i = 0; i < 2; i++) {
-      this.toggleButton()
+      this.toggleButton();
     }
-  }
+  };
 
   render() {
     return (
@@ -23,6 +21,6 @@ export class GoodPrevStateExample extends React.Component {
         <button onClick={this.toggleButton}>Toggle button state</button>
         <button onClick={this.toggleButton2Times}>Toggle button state 2 times</button>
       </>
-    )
+    );
   }
 }

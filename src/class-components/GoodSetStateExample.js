@@ -1,13 +1,11 @@
 import React from 'react';
 
-// Good: Use the `setState` method
-
 export class GoodSetStateExample extends React.Component {
   state = {
     colors: ['red', 'blue', 'green']
-  }
+  };
 
-  addYellow = () => this.setState(prevState => ({ colors: [...prevState.colors, 'yellow'] }))
+  addYellow = () => this.setState(prevState => ({ colors: [...prevState.colors, 'yellow'] }));
 
   render() {
     return (
@@ -21,6 +19,6 @@ export class GoodSetStateExample extends React.Component {
         </div>
         <button onClick={this.addYellow}>Add "yellow" to list</button>
       </>
-    )
+    );
   }
 }

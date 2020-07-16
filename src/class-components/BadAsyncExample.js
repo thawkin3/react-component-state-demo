@@ -1,16 +1,14 @@
 import React from 'react';
 
-// BAD: Don't forget that setState is asynchronous
-
 export class BadAsyncExample extends React.Component {
   state = {
     name: 'John'
-  }
+  };
 
   setNameToMatt = () => {
-    this.setState({ name: 'Matt' })
-    alert(`The name is now... ${this.state.name}!`)
-  }
+    this.setState({ name: 'Matt' });
+    alert(`The name is now... ${this.state.name}!`);
+  };
 
   render() {
     return (
@@ -21,6 +19,6 @@ export class BadAsyncExample extends React.Component {
         </div>
         <button onClick={this.setNameToMatt}>Change name to "Matt"</button>
       </>
-    )
+    );
   }
 }
