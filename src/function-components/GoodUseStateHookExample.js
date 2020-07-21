@@ -4,7 +4,7 @@ export const GoodUseStateHookExample = () => {
   const initialState = ['red', 'blue', 'green'];
   let [colors, setColors] = useState(initialState);
 
-  const addYellow = () => setColors([...colors, 'yellow']);
+  const addYellow = () => setColors(colors => [...colors, 'yellow']);
 
   return (
     <>
