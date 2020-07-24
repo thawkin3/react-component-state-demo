@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export const GoodUseStateHookExample = () => {
   const initialState = ['red', 'blue', 'green'];
-  let [colors, setColors] = useState(initialState);
+  const [colors, setColors] = useState(initialState);
 
   const addYellow = () => setColors(colors => [...colors, 'yellow']);
 
